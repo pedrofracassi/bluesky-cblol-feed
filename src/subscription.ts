@@ -21,6 +21,8 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
     const postsToDelete = ops.posts.deletes.map((del) => del.uri)
     const postsToCreate = ops.posts.creates
       .filter((create) => {
+        if (!create.record.langs?.includes('pt')) return false
+
         const includeTerms = [
           'CBLOL',
           'Pain Gaming',
