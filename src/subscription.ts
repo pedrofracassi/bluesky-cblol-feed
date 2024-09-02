@@ -3,6 +3,7 @@ import {
   isCommit,
 } from './lexicon/types/com/atproto/sync/subscribeRepos'
 import { FirehoseSubscriptionBase, getOpsByType } from './util/subscription'
+import { allTerms, excludeTerms, regex } from './util/subscription-filters/filters'
 
 export class FirehoseSubscription extends FirehoseSubscriptionBase {
   async handleEvent(evt: RepoEvent) {
@@ -22,32 +23,9 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
     const postsToCreate = ops.posts.creates
       .filter((create) => {
         if (!create.record.langs?.includes('pt')) return false
-
-        const excludeTerms = [
-          "follow trick",
-          "sdv"
-        ]
-
-        const includeTerms = [
-          'CBLOL',
-          'Pain Gaming',
-          'keydstars.gg',
-          'furia.gg',
-          'paingaming.bsky.social',
-          'intzesports.bsky.social',
-          'conferência sul',
-          'red canids'
-        ]
-
-        const regex = [
-          /\bintz\b/,
-          /\bdynquedo\b/,
-          /\bcariok\b/
-        ]
-
         // only alf-related posts
         return (
-          includeTerms.some((x) => create.record.text.toLowerCase().includes(x))
+          allTerms.some((x) => create.record.text.toLowerCase().includes(x))
           || regex.some((x) => x.test(create.record.text))
         ) && !excludeTerms.some((x) => create.record.text.toLowerCase().includes(x))
       })
