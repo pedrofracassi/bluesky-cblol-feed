@@ -1,0 +1,36 @@
+# fly.toml app configuration file generated for bluesky-cblol-feed on 2024-09-02T16:33:14-03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'bluesky-cblol-feed'
+primary_region = 'iad'
+
+[build]
+
+[env]
+FEEDGEN_HOSTNAME = 'bluesky-cblol-feed.fly.dev'
+FEEDGEN_LISTENHOST = '0.0.0.0'
+FEEDGEN_PORT = '3000'
+FEEDGEN_PUBLISHER_DID = 'did:plc:gqmxpbwrp57eaczyi3bwfxzg'
+FEEDGEN_SQLITE_LOCATION = '/data/db.sqlite'
+FEEDGEN_SUBSCRIPTION_ENDPOINT = 'wss://bsky.network'
+FEEDGEN_SUBSCRIPTION_RECONNECT_DELAY = '3000'
+
+[[mounts]]
+source = 'data'
+destination = '/data'
+
+[http_service]
+internal_port = 3000
+force_https = true
+auto_stop_machines = 'off'
+auto_start_machines = true
+min_machines_running = 1
+processes = ['app']
+
+[[vm]]
+size = 'shared-cpu-1x'
+memory = '2gb'
+cpu_kind = 'shared'
+cpus = 1

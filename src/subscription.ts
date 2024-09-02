@@ -12,15 +12,33 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
     // This logs the text of every post off the firehose.
     // Just for fun :)
     // Delete before actually using
+    /*
     for (const post of ops.posts.creates) {
       console.log(post.record.text)
     }
+    */
 
     const postsToDelete = ops.posts.deletes.map((del) => del.uri)
     const postsToCreate = ops.posts.creates
       .filter((create) => {
+        const includeTerms = [
+          'CBLOL',
+          'Pain Gaming',
+          'keydstars.gg',
+          'furia.gg',
+          'paingaming.bsky.social',
+          'intzesports.bsky.social'
+        ]
+
+        const regex = [
+          /\bloud\b/,
+          /\bintz\b/,
+          /\bdynquedo\b/,
+          /\bcariok\b/
+        ]
+
         // only alf-related posts
-        return create.record.text.toLowerCase().includes('alf')
+        return includeTerms.some((x) => create.record.text.toLowerCase().includes(x)) || regex.some((x) => x.test(create.record.text))
       })
       .map((create) => {
         // map alf-related posts to a db row
@@ -37,7 +55,12 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
         .where('uri', 'in', postsToDelete)
         .execute()
     }
+
     if (postsToCreate.length > 0) {
+      for (const post of postsToCreate) {
+        console.log(post)
+      }
+
       await this.db
         .insertInto('post')
         .values(postsToCreate)
