@@ -31,7 +31,6 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
         ]
 
         const regex = [
-          /\bloud\b/,
           /\bintz\b/,
           /\bdynquedo\b/,
           /\bcariok\b/

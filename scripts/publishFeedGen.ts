@@ -25,7 +25,7 @@ const run = async () => {
 
   // (Optional) A description of your feed
   // Ex: Top trending content from the whole network
-  const description = 'Posts relacionados ao CBLOL ou feitos por pessoas da comunidade (não oficial), com um algoritmo customizado.\n\nAlgoritmo disponível em: https://github.com/pedrofracassi/bluesky-cblol-feed/blob/main/src/algos/cblol.ts'
+  const description = 'Posts relacionados ao CBLOL ou feitos por pessoas da comunidade (não oficial), com um algoritmo customizado.\n\nAlgoritmo disponível em: https://github.com/pedrofracassi/bluesky-cblol-feed'
 
   // (Optional) The path to an image to be used as your feed's avatar
   // Ex: ~/path/to/avatar.jpeg
@@ -43,7 +43,7 @@ const run = async () => {
 
   // only update this if in a test environment
   const agent = new AtpAgent({ service: 'https://bsky.social' })
-  await agent.login({ identifier: handle, password })
+  await agent.login({ identifier: handle, password: password! })
 
   let avatarRef: BlobRef | undefined
   if (avatar) {
