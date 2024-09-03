@@ -4,5 +4,6 @@ export default [
   "keydstars.gg",
   "loud.gg",
   "pain.gg",
-  "lmgaming.xyz"
+  "lmgaming.xyz",
+  "mibr.gg"
 ]
