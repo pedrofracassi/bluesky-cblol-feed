@@ -4,7 +4,7 @@ import {
   isCommit,
 } from './lexicon/types/com/atproto/sync/subscribeRepos'
 import { FirehoseSubscriptionBase, getOpsByType } from './util/subscription'
-import { allTerms, excludeTerms, regex, communitySubdomains } from './util/subscription-filters/filters'
+import { allTerms, excludeTerms, regex, communitySubdomains, dids } from './util/subscription-filters/filters'
 
 const subdomainIncludedDids = new Map<string, boolean>()
 
@@ -49,6 +49,7 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
 
         return (
           allTerms.some((x) => create.record.text.toLowerCase().includes(x))
+          || dids.includes(create.author)
           || regex.some((x) => x.test(create.record.text))
           || subdomainIncludedDids.get(create.author)
         ) && !excludeTerms.some((x) => create.record.text.toLowerCase().includes(x))
