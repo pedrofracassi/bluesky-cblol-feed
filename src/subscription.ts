@@ -48,7 +48,7 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
         }
 
         return (
-          allTerms.some((x) => create.record.text.toLowerCase().includes(x))
+          allTerms.some((x) => new RegExp(`\\b${x}\\b`, 'i').test(create.record.text))
           || dids.includes(create.author)
           || regex.some((x) => x.test(create.record.text))
           || subdomainIncludedDids.get(create.author)
