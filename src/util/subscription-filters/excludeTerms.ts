@@ -1,5 +1,6 @@
 export default [
     'follow trick',
     'sdv',
-    'moots'
+    'moots',
+    'mutuals'
 ]
