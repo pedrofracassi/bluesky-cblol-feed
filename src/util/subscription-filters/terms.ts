@@ -5,5 +5,6 @@ export default [
     'pain gaming',
     'loud.gg',
     'furia.gg',
-    'ignis cup'
+    'ignis cup',
+    'americas challengers'
 ]
