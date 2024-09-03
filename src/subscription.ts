@@ -52,7 +52,7 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
           || dids.includes(create.author)
           || regex.some((x) => x.test(create.record.text))
           || subdomainIncludedDids.get(create.author)
-        ) && !excludeTerms.some((x) => create.record.text.toLowerCase().includes(x))
+        ) && !excludeTerms.some((x) => new RegExp(`\\b${x}\\b`, 'i').test(create.record.text))
       })
       .map((create) => {
         // map alf-related posts to a db row
