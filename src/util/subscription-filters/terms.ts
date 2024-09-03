@@ -6,5 +6,8 @@ export default [
     'loud.gg',
     'furia.gg',
     'ignis cup',
-    'americas challengers'
+    'americas challengers',
+    "#govks",
+    "#gopain",
+    "#goloud"
 ]
