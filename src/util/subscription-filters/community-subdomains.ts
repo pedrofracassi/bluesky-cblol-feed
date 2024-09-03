@@ -1,5 +1,9 @@
 export default [
   "cunil.com.br",
   "revelah.gg",
-  "pedrofracassi.dev"
+  "pedrofracassi.dev",
+  "keydstars.gg",
+  "loud.gg",
+  "pain.gg",
+  "lmgaming.xyz"
 ]
