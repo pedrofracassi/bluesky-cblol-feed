@@ -1,5 +1,5 @@
 import teams from "./teams";
-import prefixes from "./prefixes";
+import prefixes from "./prefix";
 
 import terms from "./terms";
 import regex from "./regex";
