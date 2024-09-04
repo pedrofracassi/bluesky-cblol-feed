@@ -6,5 +6,6 @@ export default [
     'sdv',
     'moots',
     'mutuals',
-    'cs'
+    'cs',
+    'wa.me'
 ]
