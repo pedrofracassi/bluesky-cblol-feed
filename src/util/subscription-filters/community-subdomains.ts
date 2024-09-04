@@ -5,5 +5,8 @@ export default [
   "loud.gg",
   "pain.gg",
   "lmgaming.xyz",
-  "mibr.gg"
+  "mibr.gg",
+  "lolesportsbr.com",
+  "lolesports.com",
+  "riotgames.com"
 ]
