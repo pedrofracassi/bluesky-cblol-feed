@@ -20,7 +20,7 @@ export const handler = async (ctx: AppContext, params: QueryParams) => {
 
   const feed = [
     {
-      post: 'at://did:plc:uk7niqvqdgr74qhwb4vrg3vi/app.bsky.feed.post/3l3dkvbbw5b23'
+      post: 'at://did:plc:uk7niqvqdgr74qhwb4vrg3vi/app.bsky.feed.post/3l3dze4adfh2n'
     },
     ...res
       .map(value => ({ value, sort: Math.random() }))
