@@ -9,5 +9,6 @@ export default [
     'americas challengers',
     "#govks",
     "#gopain",
-    "#goloud"
+    "#goloud",
+    "#cblol"
 ]
