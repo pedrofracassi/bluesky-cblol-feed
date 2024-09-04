@@ -8,5 +8,6 @@ export default [
   "mibr.gg",
   "lolesportsbr.com",
   "lolesports.com",
-  "riotgames.com"
+  "riotgames.com",
+  "matilha.co"
 ]
