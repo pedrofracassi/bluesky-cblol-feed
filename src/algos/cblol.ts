@@ -18,9 +18,14 @@ export const handler = async (ctx: AppContext, params: QueryParams) => {
   }
   const res = await builder.execute()
 
-  const feed = res.map((row) => ({
-    post: row.uri,
-  }))
+  const feed = [
+    {
+      post: 'at://did:plc:uk7niqvqdgr74qhwb4vrg3vi/app.bsky.feed.post/3l3dkvbbw5b23'
+    },
+    ...res.map((row) => ({
+      post: row.uri,
+    }))
+  ]
 
   let cursor: string | undefined
   const last = res.at(-1)
