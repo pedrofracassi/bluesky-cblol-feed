@@ -11,5 +11,6 @@ export default [
   "riotgames.com",
   "matilha.co",
   "ilhadaslendas.com",
-  "intz.com.br"
+  "intz.com.br",
+  "inhouse.gg"
 ]
