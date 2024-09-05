@@ -9,5 +9,7 @@ export default [
   "lolesportsbr.com",
   "lolesports.com",
   "riotgames.com",
-  "matilha.co"
+  "matilha.co",
+  "ilhadaslendas.com",
+  "intz.com.br"
 ]
