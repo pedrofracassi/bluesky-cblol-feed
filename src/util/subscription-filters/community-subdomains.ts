@@ -12,5 +12,6 @@ export default [
   "matilha.co",
   "ilhadaslendas.com",
   "intz.com.br",
-  "inhouse.gg"
+  "inhouse.gg",
+  "intz.com.br"
 ]

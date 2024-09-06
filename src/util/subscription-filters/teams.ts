@@ -8,5 +8,5 @@ export default [
     'losgrandes.bsky.social',
     'kabumesports.bsky.social',
     'fluxoesports.bsky.social',
-    'intzesports.bsky.social'
+    'intz.com.br'
 ]
