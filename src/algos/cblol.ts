@@ -20,9 +20,9 @@ export const handler = async (ctx: AppContext, params: QueryParams) => {
 
   const feed = [
     ...res
-      .map(value => ({ value, sort: Math.random() }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(({ value }) => value)
+      // .map(value => ({ value, sort: Math.random() }))
+      // .sort((a, b) => a.sort - b.sort)
+      // .map(({ value }) => value)
       .map((row) => ({
         post: row.uri,
       }))
