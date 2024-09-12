@@ -10,5 +10,7 @@ export default [
     "#govks",
     "#gopain",
     "#goloud",
-    "#cblol"
+    "#cblol",
+    "#AMChallengers",
+    "worlds 2024"
 ]
