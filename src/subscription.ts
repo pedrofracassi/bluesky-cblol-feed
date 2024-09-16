@@ -47,16 +47,12 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
           })
         }
 
-        if (excludeTerms.some((x) => new RegExp(`\\b${x}\\b`, 'i').test(create.record.text))) {
-          return false
-        }
-
         return (
           allTerms.some((x) => new RegExp(`\\b${x}\\b`, 'i').test(create.record.text))
           || dids.includes(create.author)
           || regex.some((x) => x.test(create.record.text))
           || subdomainIncludedDids.get(create.author)
-        )
+        ) && !excludeTerms.some((x) => new RegExp(`\\b${x}\\b`, 'i').test(create.record.text))
       })
       .map((create) => {
         // map alf-related posts to a db row
